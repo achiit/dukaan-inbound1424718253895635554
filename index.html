@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10172b">
+<title>SAHIL — मनोरंजन और रिवॉर्ड्स</title>
+<style>
+:root{--bg:#0c1222;--panel:#151f35;--panel2:#1c2944;--gold:#ffc857;--orange:#ff8a35;--text:#f7f8fc;--muted:#aab5ca;--line:#2b3853}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif}
+header{background:linear-gradient(120deg,#202d50,#111a30 65%,#382344);padding:14px 15px 18px;border-bottom:1px solid var(--line)}
+.top{max-width:850px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{font-weight:900;font-size:24px;letter-spacing:1px;color:var(--gold)}.sub{font-size:10px;color:var(--muted);letter-spacing:2px}
+button{border:0;border-radius:10px;padding:11px 14px;background:linear-gradient(110deg,var(--gold),var(--orange));color:#20182a;font-weight:800;font-size:13px}
+button.ghost{background:#293752;color:#fff;border:1px solid #405071}
+main{max-width:850px;margin:auto;padding:15px 13px 85px}
+.hero{background:linear-gradient(115deg,#6b3e9c,#293c70 60%,#bd642c);border:1px solid #8062a0;border-radius:18px;padding:19px;position:relative;overflow:hidden}
+.hero:after{content:"✦";position:absolute;right:18px;top:0;font-size:105px;color:#ffffff22}
+.hero h1{font-size:23px;margin:0 0 7px;max-width:75%}.hero p{font-size:13px;color:#eee;margin:0 0 14px;max-width:78%}
+.pills{display:flex;gap:8px;overflow:auto;margin:15px 0}.pill{white-space:nowrap;background:#1a2740;border:1px solid var(--line);border-radius:22px;padding:9px 14px;font-size:12px;color:#dfe5f1}
+.pill.active{background:#ffc857;color:#211a25;border-color:#ffc857;font-weight:800}
+.ad{background:#111a2d;border:1px dashed #68748a;color:#aab5ca;text-align:center;padding:15px;border-radius:12px;font-size:12px;margin:14px 0}
+.ad b{display:block;color:#e2e7f1;margin-bottom:4px}
+.heading{display:flex;justify-content:space-between;align-items:center;margin:21px 2px 11px}.heading h2{font-size:17px;margin:0}.heading span{font-size:11px;color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.tile{background:linear-gradient(145deg,#202e4b,#141e33);border:1px solid var(--line);border-radius:15px;padding:14px;min-height:115px}
+.art{font-size:29px;margin-bottom:7px}.tile b{font-size:14px;display:block}.tile small{color:var(--muted);font-size:11px}
+.wide{grid-column:1/-1;min-height:95px;background:linear-gradient(100deg,#392d62,#1c3551)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:15px;margin-top:12px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}.muted{color:var(--muted);font-size:12px;line-height:1.55}
+input{width:100%;padding:12px;border-radius:9px;border:1px solid var(--line);background:#0e1729;color:white;margin:7px 0 12px}
+nav{position:fixed;bottom:0;left:0;right:0;background:#111a2c;border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5}
+.navinner{max-width:850px;width:100%;display:flex;justify-content:space-around;padding:8px 3px calc(8px + env(safe-area-inset-bottom))}
+.navitem{color:#aab5ca;font-size:10px;text-align:center;cursor:pointer;min-width:55px}.navitem strong{display:block;font-size:19px;margin-bottom:2px}.navitem.active{color:var(--gold)}
+.section{display:none}.section.active{display:block}
+footer{text-align:center;color:#7f8ba2;font-size:10px;padding:25px 0}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero h1{font-size:30px}}
+</style></head>
+<body>
+<header><div class="top"><div><div class="brand">SAHIL<span style="color:white">✦</span></div><div class="sub">PLAY • LEARN • EXPLORE</div></div><button class="ghost" onclick="openSection('account')">लॉगिन / अकाउंट</button></div></header>
+<main>
+<section id="home" class="section active">
+<div class="hero"><h1>SAHIL में आपका स्वागत है!</h1><p>मज़ेदार फ्री गेम्स, उपयोगी जानकारी और नए डिजिटल अनुभव — सब एक जगह।</p><button onclick="document.getElementById('games').scrollIntoView({behavior:'smooth'})">अभी एक्सप्लोर करें</button></div>
+<div class="pills"><span class="pill active">होम</span><span class="pill">फ्री गेम्स</span><span class="pill">नई जानकारी</span><span class="pill">ऑफर्स</span></div>
+<div class="ad"><b>विज्ञापन स्थान</b>यहां स्वीकृत विज्ञापन नेटवर्क का विज्ञापन दिखेगा। विज्ञापन पर क्लिक करने के लिए किसी को मजबूर न करें।</div>
+<div class="heading"><h2 id="games">🎮 फ्री गेम्स</h2><span>सिर्फ मनोरंजन</span></div>
+<div class="grid">
+<div class="tile" onclick="alert('यहां बाद में असली फ्री पज़ल गेम जोड़ा जा सकता है।')"><div class="art">🧩</div><b>पज़ल चैलेंज</b><small>दिमागी खेल • फ्री</small></div>
+<div class="tile" onclick="alert('यहां बाद में मेमोरी गेम जोड़ा जा सकता है।')"><div class="art">🧠</div><b>मेमोरी गेम</b><small>याददाश्त बढ़ाएं</small></div>
+<div class="tile" onclick="alert('यहां बाद में क्विज़ जोड़ा जा सकता है।')"><div class="art">❓</div><b>क्विज़ टाइम</b><small>सीखें और खेलें</small></div>
+<div class="tile wide"><div class="row"><div><b>📚 डिजिटल लर्निंग</b><small>नई स्किल और टेक टिप्स पढ़ें</small></div><span style="font-size:34px">🚀</span></div></div>
+</div>
+<div class="heading"><h2>✨ ताज़ा अपडेट</h2><span>और देखें</span></div>
+<div class="card"><b>ऑनलाइन सुरक्षा के 5 आसान तरीके</b><p class="muted">मजबूत पासवर्ड रखें, OTP किसी से साझा न करें और अनजान लिंक से बचें।</p></div>
+<div class="ad"><b>विज्ञापन स्थान</b>Ad network approval के बाद विज्ञापन कोड यहां जोड़ा जाएगा।</div>
+</section>
+<section id="account" class="section">
+<div class="heading"><h2>👤 आपका अकाउंट</h2></div>
+<div class="card"><b>लॉगिन / रजिस्ट्रेशन</b><p class="muted">यह अभी केवल डिजाइन डेमो है। असली OTP लॉगिन के लिए सुरक्षित सर्वर और SMS सेवा जोड़नी होगी।</p><label class="muted">मोबाइल नंबर</label><input type="tel" placeholder="10 अंकों का मोबाइल नंबर" maxlength="10"><button onclick="alert('डेमो में OTP नहीं भेजा जाता।')">OTP भेजें (डेमो)</button></div>
+<div class="card"><b>आपकी जानकारी</b><p class="muted">लॉगिन सिस्टम जुड़ने के बाद प्रोफाइल यहां दिखेगी।</p></div>
+</section>
+<section id="wallet" class="section">
+<div class="heading"><h2>💼 कमाई और भुगतान</h2></div>
+<div class="card"><div class="muted">वेबसाइट की विज्ञापन कमाई</div><div style="font-size:28px;font-weight:900;color:var(--gold)">₹0.00</div><p class="muted">यह डेमो राशि है। असली विज्ञापन आय आपके विज्ञापन नेटवर्क के अकाउंट में दिखेगी और नेटवर्क की भुगतान शर्तों के अनुसार आपके सत्यापित बैंक खाते में आएगी।</p></div>
+<div class="notice card"><b>UPI जानकारी:</b><p class="muted">यह वेबसाइट यूजर से पैसा जमा नहीं करती और न ही गेम खेलने पर कैश देती है। Admin अपनी वास्तविक विज्ञापन आय को भुगतान नेटवर्क से बैंक में प्राप्त कर सकता है।</p></div>
+</section>
+<section id="admin" class="section">
+<div class="heading"><h2>🛠️ Admin Panel</h2></div>
+<div class="card"><p class="muted">डेमो पैनल। असली एडमिन लॉगिन सर्वर पर सुरक्षित बनाना जरूरी है।</p><label class="muted">एडमिन पासवर्ड</label><input id="pass" type="password" placeholder="पासवर्ड"><button onclick="if(document.getElementById('pass').value==='sahil123'){document.getElementById('adminstats').style.display='block'}else{alert('डेमो पासवर्ड sahil123 है')}">लॉगिन</button><div id="adminstats" style="display:none"><hr style="border-color:var(--line)"><b>साइट स्थिति</b><p class="muted">विज्ञापन: सेटअप बाकी<br>बैंक भुगतान: विज्ञापन नेटवर्क से<br>यूजर कैश विड्रॉल: उपलब्ध नहीं</p></div></div>
+</section>
+<footer>SAHIL © 2026 • फ्री मनोरंजन और जानकारी<br>यह एक डेमो वेबसाइट है, कोई वास्तविक गेमिंग या पेमेंट सेवा नहीं।</footer>
+</main>
+<nav><div class="navinner">
+<div class="navitem active" onclick="openSection('home',this)"><strong>⌂</strong>होम</div>
+<div class="navitem" onclick="openSection('home',this);document.getElementById('games').scrollIntoView()"><strong>🎮</strong>गेम्स</div>
+<div class="navitem" onclick="openSection('wallet',this)"><strong>▣</strong>कमाई</div>
+<div class="navitem" onclick="openSection('account',this)"><strong>♙</strong>अकाउंट</div>
+<div class="navitem" onclick="openSection('admin',this)"><strong>⚙</strong>एडमिन</div>
+</div></nav>
+<script>
+function openSection(id,el){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.navitem').forEach(n=>n.classList.remove('active'));if(el)el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body></html>
